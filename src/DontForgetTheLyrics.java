@@ -13,6 +13,7 @@ public class DontForgetTheLyrics {
 	 * 
 	 * 1. To record a sound clip, open Audacity and record your song.
 	 * 
+	 * 
 	 * 2. Click File -> Export Audio, and save your file on the Desktop.
 	 * 
 	 * 3. Drag your file from the Desktop into the "default package" under "src".
@@ -20,15 +21,19 @@ public class DontForgetTheLyrics {
 	
 	public static void main(String[] args) {
 		// 4. Make a pop-up to explain the game.
+		JOptionPane.showMessageDialog(null, "Lets play a game! Im going to play a piece of a song and you type the next line!");
 
 		// 5. Use the playSound method to play your song.
+		playSound("Havanna.wav");
 
 		// 6. Make a pop-up for the player to type their answer.
-
+		String answer= JOptionPane.showInputDialog("What is the next line?");
 		// 7. If they answered correctly, tell them that they were right.
-
+		if(answer.equals("My heart is in Havanna")){
+			JOptionPane.showMessageDialog(null, "You are correct");
+		}
 		// 8. Otherwise, tell them they are wrong, and give them the answer.
-
+		
 		// 9. Record another sound and repeat steps 5-8.
 
 		// 10. [optional] Add a points variable that will calculate their final score.
