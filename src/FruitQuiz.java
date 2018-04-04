@@ -17,9 +17,12 @@ public class FruitQuiz extends KeyAdapter {
 		question1 = new JLabel(
 				"<html>Which is not a real animal? <br> A: Flubber Monkey <br> B: Pink Fairy Armadillo <br> C: Dumbo Octopus</html>");
 		// 11. Make another question called "question2"
-		
+		question2 = new JLabel(
+				"<html>Which artist painted the Mona Lisa? <br> A: Pablo Picasso <br> B: Leonardo da Vinchi<br> C: Diego Rivera</html>");
+	
+	
 	}
-
+	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		int keyCode = arg0.getKeyCode();
@@ -30,8 +33,20 @@ public class FruitQuiz extends KeyAdapter {
 		int a= 65;
 		int b= 66;
 		int c= 67;
-
 		
+		if (question2.isShowing()) {
+		
+			if (keyCode== b) {
+			
+			correct();
+			}
+			
+			else {
+				incorrect();
+			}
+			
+		
+		}
 		if (question1.isShowing()) {
 			// 3. If they touched the right fruit, do steps 4 and 7
 			
@@ -41,20 +56,23 @@ public class FruitQuiz extends KeyAdapter {
 				correct();
 				nextQuestion(question2);
 			}
-				
-				// 7. Use the nextQuestion() method to go to question2
-								
-			// 8. else (if they touched something else)
+			
+			
 			else {
 				incorrect();
 				
 				
 				}
+		}
+				// 7. Use the nextQuestion() method to go to question2
+								
+			// 8. else (if they touched something else)
+		
 				
 				// 9. Call the incorrect() method
 			
-
-			}}
+				
+		}
 
 		// 12. If question2 is showing,
 		
